@@ -11,20 +11,18 @@ public class Tenant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int id;
-    @Column
-    private String name;
+    @Column(name="first_names")
+    private String firstName;
+    @Column(name="surnames")
+    private String surname;
+    @Column(name="other_names")
+    private String otherNames;
     @Column(name = "id_number")
     private String idNumber;
-    @Column(name="kra_pin")
-    private String kraPin;
-    @Column(name="cert_no")
-    private String certNo;
     @Column(name="phone_no")
     private String phoneNo;
     @Column
     private String email;
-    @Column
-    private String website;
     @Column(name="is_active")
     private boolean active;
     @Column(name="postal_address")
@@ -40,12 +38,28 @@ public class Tenant {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getOtherNames() {
+        return otherNames;
+    }
+
+    public void setOtherNames(String otherNames) {
+        this.otherNames = otherNames;
     }
 
     public String getIdNumber() {
@@ -54,22 +68,6 @@ public class Tenant {
 
     public void setIdNumber(String idNumber) {
         this.idNumber = idNumber;
-    }
-
-    public String getKraPin() {
-        return kraPin;
-    }
-
-    public void setKraPin(String kraPin) {
-        this.kraPin = kraPin;
-    }
-
-    public String getCertNo() {
-        return certNo;
-    }
-
-    public void setCertNo(String certNo) {
-        this.certNo = certNo;
     }
 
     public String getPhoneNo() {
@@ -86,14 +84,6 @@ public class Tenant {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
     }
 
     public boolean isActive() {
@@ -124,13 +114,12 @@ public class Tenant {
     public String toString() {
         return "Tenant{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", otherNames='" + otherNames + '\'' +
                 ", idNumber='" + idNumber + '\'' +
-                ", kraPin='" + kraPin + '\'' +
-                ", certNo='" + certNo + '\'' +
                 ", phoneNo='" + phoneNo + '\'' +
                 ", email='" + email + '\'' +
-                ", website='" + website + '\'' +
                 ", active=" + active +
                 ", postalAddress='" + postalAddress + '\'' +
                 ", occupation='" + occupation + '\'' +
