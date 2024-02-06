@@ -11,9 +11,9 @@ public class Tenant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int id;
-    @Column(name="first_names")
+    @Column(name="first_name")
     private String firstName;
-    @Column(name="surnames")
+    @Column(name="surname")
     private String surname;
     @Column(name="other_names")
     private String otherNames;
